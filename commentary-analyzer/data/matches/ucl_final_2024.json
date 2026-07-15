@@ -1,0 +1,26 @@
+{
+  "match": "Real Madrid vs Borussia Dortmund - UEFA Champions League Final 2024",
+  "date": "2024-06-01",
+  "commentator": "Sample Commentator",
+  "channel": "Sample Sports Network",
+  "summary": "Real Madrid came from behind to beat Borussia Dortmund 2-0 in the 2024 Champions League Final at Wembley. Dortmund dominated large stretches of the first half but couldn't convert their chances, and second-half goals from Dani Carvajal and Vinicius Junior sealed a record 15th European title for Real Madrid.",
+  "lines": [
+    {"text": "Dortmund starts brightly here, pressing high and cutting off every passing lane.", "label": "neutral"},
+    {"text": "What a chance! Fullkrug should be doing better there, that's a gilt-edged opportunity wasted!", "label": "hyped"},
+    {"text": "Real Madrid are struggling to get any kind of foothold in this game so far.", "label": "neutral"},
+    {"text": "The referee is really letting a lot go here, Dortmund players are furious with that non-call.", "label": "biased"},
+    {"text": "Courtois produces a stunning save to deny Sancho, absolutely world class goalkeeping.", "label": "hyped"},
+    {"text": "Half-time and it's still goalless, though Dortmund will feel they should be ahead.", "label": "neutral"},
+    {"text": "Real Madrid look like a completely different side after the break, much more purposeful.", "label": "neutral"},
+    {"text": "Carvajal rises highest at the back post and heads Real Madrid into the lead!", "label": "hyped"},
+    {"text": "That's a soft goal to concede, Dortmund's marking was nowhere to be seen.", "label": "biased"},
+    {"text": "Vinicius Junior doubles the lead, and now the game is surely beyond Dortmund.", "label": "hyped"},
+    {"text": "Dortmund push men forward in search of a way back into this final.", "label": "neutral"},
+    {"text": "Real Madrid see out the closing stages comfortably, in full control now.", "label": "neutral"},
+    {"text": "Incredible scenes at Wembley as Real Madrid lift a record fifteenth European Cup!", "label": "hyped"},
+    {"text": "You have to feel for Dortmund, they were the better side for large parts of this match.", "label": "biased"},
+    {"text": "A historic night for Real Madrid, who continue to make this competition their own.", "label": "hyped"}
+  ],
+  "bias_score": 34,
+  "team_share": {"Real Madrid": 55, "Borussia Dortmund": 45}
+}

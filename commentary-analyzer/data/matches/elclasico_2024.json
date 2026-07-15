@@ -1,0 +1,26 @@
+{
+  "match": "Barcelona vs Real Madrid - El Clasico 2024",
+  "date": "2024-04-21",
+  "commentator": "Sample Commentator",
+  "channel": "Sample Sports Network",
+  "summary": "Barcelona beat Real Madrid 3-2 at the Estadi Olimpic Lluis Companys, in a result that swung La Liga's title race firmly in Barcelona's favour. Real Madrid twice fought back from behind, but late goals from Lamine Yamal and Raphinha sealed the win for the hosts.",
+  "lines": [
+    {"text": "Andreas Christensen capitalized on a corner from Raphinha to head home.", "label": "neutral"},
+    {"text": "The game was marked by high tension.", "label": "neutral"},
+    {"text": "A decision that sparked significant debate regarding the lack of goal-line technology.", "label": "biased"},
+    {"text": "Barcelona reclaimed the lead in the 69th minute via Fermin Lopez.", "label": "neutral"},
+    {"text": "Their advantage was short-lived as Lucas Vazquez equalized.", "label": "neutral"},
+    {"text": "The dramatic conclusion arrived in stoppage time when Jude Bellingham hammered home.", "label": "hyped"},
+    {"text": "Securing a 3-2 victory and effectively deciding the La Liga title race.", "label": "neutral"},
+    {"text": "The second El Clasico of the year proved to be a one-sided affair in the second half.", "label": "biased"},
+    {"text": "Real Madrid struggled to break the defensive line.", "label": "neutral"},
+    {"text": "The momentum shifted entirely after the break when Robert Lewandowski struck twice.", "label": "neutral"},
+    {"text": "Stun the home crowd with a clinical finish.", "label": "hyped"},
+    {"text": "Robert Lewandowski's impact opened the floodgates.", "label": "hyped"},
+    {"text": "Lamine Yamal added a third in the 77th minute with a powerful strike into the top corner.", "label": "hyped"},
+    {"text": "Raphinha finalized the rout in the 84th minute.", "label": "neutral"},
+    {"text": "By lofting the ball over the goalkeeper to seal a dominant 4-0 win.", "label": "hyped"}
+  ],
+  "bias_score": 22,
+  "team_share": {"Barcelona": 61, "Real Madrid": 39}
+}

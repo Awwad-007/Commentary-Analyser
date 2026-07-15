@@ -1,0 +1,72 @@
+text,predicted_label,confidence,needs_review
+"The match began with high intensity at the Santiago Bernabéu on April 21, 2024, as Barcelona struck first in the sixth minute when Andreas Christensen capitalized on a corner from Raphinha to head home.",neutral,0.499,True
+"Real Madrid responded quickly, drawing level in the 18th minute after Vinícius Júnior converted a penalty following a foul on Lucas Vázquez.",neutral,0.614,False
+"The game was marked by high tension, particularly in the 28th minute when Lamine Yamal’s strike was cleared off the line by Andriy Lunin, a decision that sparked significant debate regarding the lack of goal-line technology.",neutral,0.491,True
+"Barcelona reclaimed the lead in the 69th minute via Fermín López,  but their advantage was short-lived as Lucas Vázquez equalized just four minutes later.",neutral,0.695,False
+"The dramatic conclusion arrived in stoppage time when Jude Bellingham hammered home a cross from Vázquez, securing a 3-2  victory and effectively deciding the La Liga title race in Madrid's favor.",neutral,0.505,True
+"The second El Clásico of the year took place on October 26, 2024, and proved to be a one-sided affair in the second half.",neutral,0.402,True
+"Real Madrid struggled to break the defensive line, with Kylian Mbappé finding himself flagged for  offside on two separate occasions in the first half.",neutral,0.569,True
+"The momentum shifted entirely after the break when Robert Lewandowski struck twice in three minutes to stun the home crowd, first with a clinical finish from Marc Casado's through ball and then with a soaring header from an Alejandro Balde cross.",hyped,0.5,True
+"Despite missing an opportunity for a hat-trick when he hit the post, Lewandowski’s impact opened the floodgates.",neutral,0.465,True
+"Lamine Yamal added a third in the 77th minute with a powerful strike into the top corner, and Raphinha finalized the rout in the 84th minute by lofting the ball over the goalkeeper to seal a dominant 4-0 win for Barcelona.",hyped,0.467,True
+The referee signals for the start of the match.,neutral,0.468,True
+The atmosphere is electric as the players take the pitch.,neutral,0.531,True
+"That was a reckless challenge by the defender, absolutely no regard for the opponent.",neutral,0.533,True
+"Modric controls the midfield with ease, dictating the tempo of the game perfectly.",neutral,0.47,True
+Mbappe strikes it with venom into the bottom corner—stunning accuracy!,hyped,0.445,True
+"The referee has completely lost control of this game, a series of questionable decisions against the home side.",neutral,0.459,True
+"Lamine Yamal attempts a speculative shot from distance, but it sails high over the bar.",neutral,0.465,True
+Absolute madness at the Bernabéu!,neutral,0.497,True
+The crowd is roaring as they sense a late winner.,neutral,0.497,True
+"It’s a tactical masterclass from the Barcelona manager, completely stifling the opposition's attack.",neutral,0.543,True
+"The match ends in a frustrating stalemate, with neither side able to break the deadlock.",neutral,0.484,True
+"The atmosphere at the Santiago Bernabéu is electric, the kind of tension that vibrates through the concrete.",neutral,0.492,True
+"Both teams emerge from the tunnel, the iconic anthem playing, fans waving flags across every stand.",neutral,0.497,True
+"The referee checks his watch, blows the whistle, and we are off.",neutral,0.54,True
+"Barcelona immediately looking to dictate tempo, moving the ball with crisp, short passes in their own half.",neutral,0.495,True
+"Real Madrid sitting deep, keeping their defensive structure compact.",neutral,0.62,False
+"Vinícius Júnior makes his first run down the left, skipping past Koundé with effortless grace.",hyped,0.428,True
+"He cuts inside, looking for Bellingham, but Pedri intercepts at the last second.",neutral,0.44,True
+A massive collective sigh from the home crowd.,hyped,0.452,True
+"Barcelona transition quickly, Raphinha sprinting into space, he fires a low cross into the box—Lewandowski misses it by a fraction of an inch!",neutral,0.503,True
+Disaster for Madrid!,neutral,0.571,True
+A defensive mix-up between Courtois and Militão allows Lamine Yamal to pounce on the loose ball.,neutral,0.486,True
+"He doesn't hesitate, slotting it into the bottom corner with icy composure.",hyped,0.445,True
+The away section is absolutely erupting!,neutral,0.497,True
+Madrid are reeling here; they’ve lost their shape entirely in the midfield.,neutral,0.571,True
+"Bellingham looks frustrated, gesturing to his teammates to wake up.",neutral,0.471,True
+Wait—the referee is pointing to the spot!,neutral,0.489,True
+A controversial decision after Bellingham went down under a challenge from Cubarsí.,neutral,0.457,True
+"The replays are inconclusive, but the Madrid players are surrounding the official, demanding a red card.",neutral,0.539,True
+It's absolute chaos on the pitch.,neutral,0.497,True
+"Gavi is furious, pushing back, and the ref has to step in to pull everyone apart.",neutral,0.517,True
+Vinícius steps up to take the penalty...,neutral,0.49,True
+he sends the keeper the wrong way!,neutral,0.497,True
+The intensity hasn't dropped for a second.,neutral,0.453,True
+We’ve seen three crunching tackles in the last five minutes alone.,neutral,0.5,True
+"The referee is doing his best to keep a lid on this, but tempers are boiling over.",neutral,0.455,True
+Raphinha forces a world-class save from Lunin with a thunderous effort from 25 yards out.,neutral,0.499,True
+"The players head to the tunnels, but the debate on the touchline is only just beginning.",neutral,0.476,True
+The managers are locked in intense conversation with their staff.,neutral,0.483,True
+Second half begins and the tactical battle shifts.,neutral,0.486,True
+Ancelotti brings on Modrić to control the tempo.,neutral,0.49,True
+It’s working—Madrid are finding pockets of space between the lines.,neutral,0.516,True
+"Barcelona are pinned back, relying on the pace of Balde to clear the danger.",neutral,0.499,True
+"It’s Modrić with a magical ball over the top, Mbappé chests it down and rifles it into the top right corner!",hyped,0.452,True
+The stadium is shaking!,neutral,0.497,True
+A masterclass in vision and finishing.,neutral,0.549,True
+Barcelona look shellshocked now.,neutral,0.562,True
+"They try to respond, bringing on fresh legs, but the Madrid press is suffocating.",neutral,0.542,True
+A handball appeal in the Madrid box ignored by the VAR team.,neutral,0.54,True
+"The Barcelona bench is up in arms, shouting at the fourth official.",neutral,0.537,True
+It’s a total disgrace how the VAR team ignored such a clear violation.,neutral,0.497,True
+The tension is unbearable.,neutral,0.563,True
+Five minutes of stoppage time added.,neutral,0.418,True
+"Barcelona throw everyone forward, even the goalkeeper is up for the corner.",neutral,0.478,True
+The ball is whipped in—Lunin punches it clear!,neutral,0.46,True
+"Real Madrid break on the counter, it's 3-on-1.",neutral,0.606,False
+"Vinícius slides it across to Rodrygo, who taps it into an empty net.",neutral,0.466,True
+That is surely the dagger The final whistle blows.,neutral,0.476,True
+"A classic, intense, and controversial night at the Bernabéu.",neutral,0.551,True
+"Fans are staying late to celebrate, while the Barcelona players sink to the grass, exhausted and bitter about the officiating.",neutral,0.534,True
+This match will be discussed for weeks to come.,neutral,0.48,True
