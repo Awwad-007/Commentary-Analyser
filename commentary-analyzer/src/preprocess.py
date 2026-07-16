@@ -2,6 +2,8 @@ import os
 import re
 import pandas as pd
 
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+
 RAW_DIR = "data/raw"
 PROCESSED_DIR = "data/processed"
 

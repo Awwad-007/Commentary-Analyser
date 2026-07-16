@@ -1,243 +1,157 @@
-import os
-import json
-import pickle
-import pandas as pd
 import streamlit as st
+import pickle
+import json
+import os
+import sys
+import pandas as pd
 
-# ─────────────────────────────────────────────
-# PATHS
-# ─────────────────────────────────────────────
-MATCHES_DIR = "data/matches"
-MODEL_PATH = "model/classifier.pkl"
-VECTORIZER_PATH = "model/vectorizer.pkl"
+# fix path so app can find all project files
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# ─────────────────────────────────────────────
-# PAGE CONFIG (must be the first Streamlit call)
-# ─────────────────────────────────────────────
-st.set_page_config(
-    page_title="Football Commentary Bias Detector",
-    page_icon="⚽",
-    layout="wide",
-)
-
-# ─────────────────────────────────────────────
-# CACHED LOADERS
-# Streamlit re-runs the whole script on every interaction,
-# so we cache anything slow/expensive (loading the model,
-# reading files) to avoid redoing it every single time.
-# ─────────────────────────────────────────────
-
+# ─── load model ───────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    """Loads the trained classifier + vectorizer once and reuses them."""
-    with open(MODEL_PATH, "rb") as f:
-        model = pickle.load(f)
-    with open(VECTORIZER_PATH, "rb") as f:
-        vectorizer = pickle.load(f)
+    model = pickle.load(open("model/classifier.pkl", "rb"))
+    vectorizer = pickle.load(open("model/vectorizer.pkl", "rb"))
     return model, vectorizer
 
-
+# ─── load match list ──────────────────────────────────────────
 @st.cache_data
-def list_match_files():
-    """Returns a list of (display_name, filepath) for every JSON in data/matches/."""
-    if not os.path.exists(MATCHES_DIR):
-        return []
-
-    files = [f for f in os.listdir(MATCHES_DIR) if f.endswith(".json")]
-    matches = []
-    for f in files:
-        # Turn "ucl_final_2024.json" into "Ucl Final 2024" for the dropdown label
-        display_name = f.replace(".json", "").replace("_", " ").title()
-        matches.append((display_name, os.path.join(MATCHES_DIR, f)))
+def load_matches():
+    matches_dir = "data/matches"
+    if not os.path.exists(matches_dir):
+        return {}
+    matches = {}
+    for f in os.listdir(matches_dir):
+        if f.endswith(".json"):
+            with open(os.path.join(matches_dir, f), encoding="utf-8") as file:
+                data = json.load(file)
+                matches[data["match"]] = data
     return matches
 
-
-def load_match_json(filepath):
-    with open(filepath, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-
-# ─────────────────────────────────────────────
-# CORE ANALYSIS LOGIC
-# Both modes end up calling this same function so the
-# report always looks and behaves identically.
-# ─────────────────────────────────────────────
-
-def analyze_lines_live(lines, model, vectorizer):
-    """
-    Takes a list of raw text lines, runs them through the trained
-    model, and returns a list of {"text": ..., "label": ...} dicts,
-    same shape as what's stored in the match JSON files.
-    """
+# ─── analyze raw text live ────────────────────────────────────
+def analyze_text(text, model, vectorizer):
+    lines = [l.strip() for l in text.strip().split("\n") if len(l.strip()) > 20]
     if not lines:
         return []
+    vecs = vectorizer.transform(lines)
+    labels = model.predict(vecs)
+    probs = model.predict_proba(vecs).max(axis=1)
+    return [{"text": l, "label": lab, "confidence": round(float(p)*100, 1)}
+            for l, lab, p in zip(lines, labels, probs)]
 
-    X = vectorizer.transform(lines)
-    predictions = model.predict(X)
+# ─── render bias report ───────────────────────────────────────
+def render_report(lines_data, match_info=None):
+    if not lines_data:
+        st.warning("no commentary lines to analyze")
+        return
 
-    return [{"text": text, "label": label} for text, label in zip(lines, predictions)]
+    df = pd.DataFrame(lines_data)
 
-
-def compute_stats(lines):
-    """
-    Given a list of {"text", "label"} dicts, returns:
-    - percentage of hyped / neutral / biased lines
-    - a bias_score (0-100), calculated as the % of biased lines
-    """
-    total = len(lines)
-    if total == 0:
-        return {"hyped": 0, "neutral": 0, "biased": 0}, 0
-
-    counts = {"hyped": 0, "neutral": 0, "biased": 0}
-    for line in lines:
-        label = line.get("label", "neutral")
-        if label in counts:
-            counts[label] += 1
-
-    percentages = {k: round((v / total) * 100) for k, v in counts.items()}
-    bias_score = percentages["biased"]  # simple definition: % of biased lines
-
-    return percentages, bias_score
-
-
-# ─────────────────────────────────────────────
-# REPORT DISPLAY
-# This single function renders the report for EITHER mode,
-# so Mode 1 (JSON) and Mode 2 (live text) always look the same.
-# ─────────────────────────────────────────────
-
-def render_report(match_title, commentator, channel, summary, lines, team_share=None):
-    st.header(match_title)
-
-    info_bits = []
-    if commentator:
-        info_bits.append(f"**Commentator:** {commentator}")
-    if channel:
-        info_bits.append(f"**Channel:** {channel}")
-    if info_bits:
-        st.caption(" | ".join(info_bits))
-
-    if summary:
-        st.write(summary)
-
-    st.divider()
-
-    percentages, bias_score = compute_stats(lines)
-
-    # ── 3 stat boxes ──
-    col1, col2, col3 = st.columns(3)
-    col1.metric("Hyped", f"{percentages['hyped']}%")
-    col2.metric("Neutral", f"{percentages['neutral']}%")
-    col3.metric("Biased", f"{percentages['biased']}%")
-
-    st.divider()
-
-    # ── Team commentary share bar ──
-    if team_share:
-        st.subheader("Team Commentary Share")
-        for team, share in team_share.items():
-            st.write(f"{team} — {share}%")
-            st.progress(share / 100)
-
+    # match info header
+    if match_info:
+        st.markdown(f"### {match_info.get('match', '')}")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.caption(f"🎙️ {match_info.get('commentator', '')} — {match_info.get('channel', '')}")
+        with col2:
+            st.caption(f"📅 {match_info.get('date', '')}")
+        if match_info.get("summary"):
+            st.info(match_info["summary"])
         st.divider()
 
-    # ── Commentator bias score ──
-    st.subheader("Commentator Bias Score")
-    st.write(f"**{bias_score} / 100**")
-    st.progress(bias_score / 100)
-    if bias_score < 20:
-        st.success("Low bias detected — mostly neutral commentary.")
-    elif bias_score < 50:
-        st.warning("Moderate bias detected — some loaded language present.")
-    else:
-        st.error("High bias detected — commentary leans strongly one way.")
+    # stat boxes
+    total = len(df)
+    hyped_pct = round(len(df[df.label == "hyped"]) / total * 100)
+    neutral_pct = round(len(df[df.label == "neutral"]) / total * 100)
+    biased_pct = round(len(df[df.label == "biased"]) / total * 100)
 
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("🔥 Hyped", f"{hyped_pct}%")
+    with col2:
+        st.metric("😐 Neutral", f"{neutral_pct}%")
+    with col3:
+        st.metric("⚠️ Biased", f"{biased_pct}%")
+
+    # bias score
     st.divider()
-
-    # ── Line-by-line breakdown ──
-    st.subheader("Line-by-Line Breakdown")
-
-    label_colors = {
-        "hyped": "🟠",
-        "neutral": "⚪",
-        "biased": "🔴",
-    }
-
-    df = pd.DataFrame(lines)
-    df["label"] = df["label"].apply(lambda l: f"{label_colors.get(l, '')} {l}")
-    df = df.rename(columns={"text": "Commentary Line", "label": "Label"})
-
-    st.dataframe(df, use_container_width=True, hide_index=True)
-
-
-# ─────────────────────────────────────────────
-# SIDEBAR — MODE SELECTOR
-# ─────────────────────────────────────────────
-
-st.sidebar.title("⚽ Bias Detector")
-mode = st.sidebar.radio("Choose a mode:", ["Pick a match", "Paste your own"])
-
-# ─────────────────────────────────────────────
-# MODE 1 — PICK A MATCH
-# ─────────────────────────────────────────────
-
-if mode == "Pick a match":
-    matches = list_match_files()
-
-    if not matches:
-        st.warning(
-            "No match files found in data/matches/. "
-            "Add a .json file there first (see Task 3)."
-        )
+    bias_score = biased_pct
+    if bias_score < 20:
+        st.success(f"🟢 Commentator Bias Score: {bias_score}/100 — fairly balanced")
+    elif bias_score < 40:
+        st.warning(f"🟡 Commentator Bias Score: {bias_score}/100 — some bias detected")
     else:
-        display_names = [m[0] for m in matches]
-        selected_name = st.sidebar.selectbox("Select a match:", display_names)
+        st.error(f"🔴 Commentator Bias Score: {bias_score}/100 — strong bias detected")
 
-        # Find the matching filepath for the selected display name
-        selected_filepath = next(fp for name, fp in matches if name == selected_name)
-        match_data = load_match_json(selected_filepath)
+    # team share bars (mode 1 only)
+    if match_info and match_info.get("team_share"):
+        st.divider()
+        st.markdown("**Commentary share by team:**")
+        for team, pct in match_info["team_share"].items():
+            st.write(team)
+            st.progress(int(pct) / 100, text=f"{pct}%")
 
-        render_report(
-            match_title=match_data.get("match", "Unknown Match"),
-            commentator=match_data.get("commentator", ""),
-            channel=match_data.get("channel", ""),
-            summary=match_data.get("summary", ""),
-            lines=match_data.get("lines", []),
-            team_share=match_data.get("team_share"),
-        )
+    # line by line breakdown
+    st.divider()
+    st.markdown("**Line-by-line breakdown:**")
+    emoji_map = {"hyped": "🔥", "neutral": "😐", "biased": "⚠️"}
+    for _, row in df.iterrows():
+        emoji = emoji_map.get(row["label"], "")
+        conf = f" ({row['confidence']}%)" if "confidence" in row else ""
+        st.markdown(f"{emoji} `{row['label'].upper()}{conf}` — {row['text']}")
 
-# ─────────────────────────────────────────────
-# MODE 2 — PASTE YOUR OWN
-# ─────────────────────────────────────────────
+# ─── main app ─────────────────────────────────────────────────
+st.set_page_config(page_title="Football Commentary Bias Detector", page_icon="⚽", layout="wide")
+st.title("⚽ Football Commentary Bias Detector")
+st.caption("Find out if your commentator is actually biased — or just dramatic.")
 
-else:
-    st.sidebar.write("Paste commentary lines below, one per line.")
+model, vectorizer = load_model()
+matches = load_matches()
 
-    raw_text = st.text_area(
-        "Paste commentary text here (one line per sentence):",
-        height=250,
-        placeholder="Real Madrid take an early lead through Vinicius Junior...\nWhat a strike, absolutely unstoppable!\n...",
-    )
+mode = st.sidebar.radio("Choose mode", [
+    "🏆 Pick a famous match",
+    "📺 YouTube link",
+    "✍️ Paste your own"
+])
 
-    match_title = st.text_input("Match title (optional):", value="Custom Commentary Analysis")
+st.sidebar.divider()
+st.sidebar.caption("Built by Awwad | ML Project")
 
-    analyze_clicked = st.button("Analyze")
+# ─── mode 1: predefined matches ───────────────────────────────
+if mode == "🏆 Pick a famous match":
+    if not matches:
+        st.error("no match files found in data/matches/")
+    else:
+        selected = st.selectbox("Select a match", list(matches.keys()))
+        match_data = matches[selected]
+        lines_data = match_data.get("lines", [])
+        render_report(lines_data, match_info=match_data)
 
-    if analyze_clicked:
-        if not raw_text.strip():
-            st.error("Please paste some commentary text first.")
-        else:
-            # Split on newlines, drop empty lines
-            lines_input = [l.strip() for l in raw_text.split("\n") if l.strip()]
+# ─── mode 2: youtube link ─────────────────────────────────────
+elif mode == "📺 YouTube link":
+    st.markdown("Paste any football match YouTube link and we'll fetch the transcript automatically.")
+    url = st.text_input("YouTube URL", placeholder="https://www.youtube.com/watch?v=...")
+    if st.button("Fetch & Analyze") and url:
+        with st.spinner("fetching transcript..."):
+            try:
+                from src.youtube_fetch import fetch_transcript
+                text = fetch_transcript(url)
+                if text:
+                    st.success(f"fetched {len(text)} characters of commentary")
+                    lines_data = analyze_text(text, model, vectorizer)
+                    render_report(lines_data)
+                else:
+                    st.error("could not fetch transcript — try a different video or use paste mode")
+            except ImportError:
+                st.error("youtube-transcript-api not installed. run: pip install youtube-transcript-api")
 
-            model, vectorizer = load_model()
-            analyzed_lines = analyze_lines_live(lines_input, model, vectorizer)
-
-            render_report(
-                match_title=match_title,
-                commentator="",
-                channel="",
-                summary="",
-                lines=analyzed_lines,
-                team_share=None,  # can't infer team share from raw pasted text
-            )
+# ─── mode 3: paste your own ───────────────────────────────────
+elif mode == "✍️ Paste your own":
+    st.markdown("Paste any commentary text below — one line per sentence works best.")
+    text = st.text_area("Commentary text", height=200,
+                        placeholder="Paste match commentary here...\nEach line will be analyzed separately.")
+    if st.button("Analyze") and text:
+        with st.spinner("analyzing..."):
+            lines_data = analyze_text(text, model, vectorizer)
+            render_report(lines_data)
