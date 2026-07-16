@@ -3,6 +3,8 @@ import os
 import time
 from bs4 import BeautifulSoup
 
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible)"}
 
 def scrape_match(url, match_name):

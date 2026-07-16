@@ -3,6 +3,8 @@ import sys
 import pickle
 import pandas as pd
 
+os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+
 MODEL_PATH = "model/classifier.pkl"
 VECTORIZER_PATH = "model/vectorizer.pkl"
 LABELED_DIR = "data/labeled"
