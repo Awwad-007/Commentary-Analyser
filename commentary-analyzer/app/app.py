@@ -11,9 +11,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # ─── load model ───────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    model = pickle.load(open("model/classifier.pkl", "rb"))
-    vectorizer = pickle.load(open("model/vectorizer.pkl", "rb"))
-    return model, vectorizer
+    import os
+    os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    clf = pickle.load(open("model/classifier.pkl", "rb"))
+    encoder = pickle.load(open("model/encoder.pkl", "rb"))
+    return clf, encoder
 
 # ─── load match list ──────────────────────────────────────────
 @st.cache_data
@@ -30,13 +32,13 @@ def load_matches():
     return matches
 
 # ─── analyze raw text live ────────────────────────────────────
-def analyze_text(text, model, vectorizer):
+def analyze_text(text, model, encoder):
     lines = [l.strip() for l in text.strip().split("\n") if len(l.strip()) > 20]
     if not lines:
         return []
-    vecs = vectorizer.transform(lines)
-    labels = model.predict(vecs)
-    probs = model.predict_proba(vecs).max(axis=1)
+    embeddings = encoder.encode(lines)
+    labels = model.predict(embeddings)
+    probs = model.predict_proba(embeddings).max(axis=1)
     return [{"text": l, "label": lab, "confidence": round(float(p)*100, 1)}
             for l, lab, p in zip(lines, labels, probs)]
 
@@ -62,9 +64,9 @@ def render_report(lines_data, match_info=None):
 
     # stat boxes
     total = len(df)
-    hyped_pct = round(len(df[df.label == "hyped"]) / total * 100)
-    neutral_pct = round(len(df[df.label == "neutral"]) / total * 100)
-    biased_pct = round(len(df[df.label == "biased"]) / total * 100)
+    hyped_pct = round(len(df[df.label == "hyped"]) / total * 100) if total > 0 else 0
+    neutral_pct = round(len(df[df.label == "neutral"]) / total * 100) if total > 0 else 0
+    biased_pct = round(len(df[df.label == "biased"]) / total * 100) if total > 0 else 0
 
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -106,7 +108,7 @@ st.set_page_config(page_title="Football Commentary Bias Detector", page_icon="�
 st.title("⚽ Football Commentary Bias Detector")
 st.caption("Find out if your commentator is actually biased — or just dramatic.")
 
-model, vectorizer = load_model()
+model, encoder = load_model()
 matches = load_matches()
 
 mode = st.sidebar.radio("Choose mode", [
@@ -139,7 +141,7 @@ elif mode == "📺 YouTube link":
                 text = fetch_transcript(url)
                 if text:
                     st.success(f"fetched {len(text)} characters of commentary")
-                    lines_data = analyze_text(text, model, vectorizer)
+                    lines_data = analyze_text(text, model, encoder)
                     render_report(lines_data)
                 else:
                     st.error("could not fetch transcript — try a different video or use paste mode")
@@ -153,5 +155,5 @@ elif mode == "✍️ Paste your own":
                         placeholder="Paste match commentary here...\nEach line will be analyzed separately.")
     if st.button("Analyze") and text:
         with st.spinner("analyzing..."):
-            lines_data = analyze_text(text, model, vectorizer)
+            lines_data = analyze_text(text, model, encoder)
             render_report(lines_data)
