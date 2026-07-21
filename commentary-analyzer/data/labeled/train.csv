@@ -1,31 +1,249 @@
 text,label
-"Andreas Christensen capitalized on a corner from Raphinha to head home",neutral
-"The game was marked by high tension",neutral
-"A decision that sparked significant debate regarding the lack of goal-line technology",biased
-"Barcelona reclaimed the lead in the 69th minute via Fermín López",neutral
-"Their advantage was short-lived as Lucas Vázquez equalized",neutral
-"The dramatic conclusion arrived in stoppage time when Jude Bellingham hammered home",hyped
-"Securing a 3-2 victory and effectively deciding the La Liga title race",neutral
-"The second El Clásico of the year proved to be a one-sided affair in the second half",biased
-"Real Madrid struggled to break the defensive line",neutral
-"The momentum shifted entirely after the break when Robert Lewandowski struck twice",neutral
-"Stun the home crowd with a clinical finish",hyped
-"Robert Lewandowski’s impact opened the floodgates",hyped
-"Lamine Yamal added a third in the 77th minute with a powerful strike into the top corner",hyped
-"Raphinha finalized the rout in the 84th minute",neutral
-"By lofting the ball over the goalkeeper to seal a dominant 4-0 win",hyped
-"The referee blew the whistle to signal the start of the second half",neutral
+Andreas Christensen capitalized on a corner from Raphinha to head home,neutral
+The game was marked by high tension,neutral
+A decision that sparked significant debate regarding the lack of goal-line technology,biased
+Barcelona reclaimed the lead in the 69th minute via Fermín López,neutral
+Their advantage was short-lived as Lucas Vázquez equalized,neutral
+The dramatic conclusion arrived in stoppage time when Jude Bellingham hammered home,hyped
+Securing a 3-2 victory and effectively deciding the La Liga title race,neutral
+The second El Clásico of the year proved to be a one-sided affair in the second half,biased
+Real Madrid struggled to break the defensive line,neutral
+The momentum shifted entirely after the break when Robert Lewandowski struck twice,neutral
+Stun the home crowd with a clinical finish,hyped
+Robert Lewandowski’s impact opened the floodgates,hyped
+Lamine Yamal added a third in the 77th minute with a powerful strike into the top corner,hyped
+Raphinha finalized the rout in the 84th minute,neutral
+By lofting the ball over the goalkeeper to seal a dominant 4-0 win,hyped
+The referee blew the whistle to signal the start of the second half,neutral
 "What an absolute robbery, that was never a foul!",biased
-"The ball drifted wide of the post",neutral
+The ball drifted wide of the post,neutral
 "Yamal is putting on a masterclass, simply untouchable tonight!",hyped
-"The match statistics show both teams have had equal possession",neutral
-"It is a total disgrace how the VAR team ignored that blatant handball",biased
-"Real Madrid are pushing hard for an equalizer before the break",neutral
+The match statistics show both teams have had equal possession,neutral
+It is a total disgrace how the VAR team ignored that blatant handball,biased
+Real Madrid are pushing hard for an equalizer before the break,neutral
 "A legendary performance from Bellingham, he is truly the best in the world!",hyped
-"The game has slowed down significantly in the last ten minutes",neutral
-"The officiating today has been completely one-sided against Barcelona",biased
-"GOAL! A thunderbolt from outside the box leaves the keeper helpless!",hyped
-"The stadium crowd is creating an incredible atmosphere under the lights",hyped
-"The substitution was made in the 75th minute",neutral
-"It is honestly pathetic that the league allows such terrible refereeing",biased
-"Lewandowski coolly slots it into the bottom corner",neutral
+The game has slowed down significantly in the last ten minutes,neutral
+The officiating today has been completely one-sided against Barcelona,biased
+GOAL! A thunderbolt from outside the box leaves the keeper helpless!,hyped
+The stadium crowd is creating an incredible atmosphere under the lights,hyped
+The substitution was made in the 75th minute,neutral
+It is honestly pathetic that the league allows such terrible refereeing,biased
+Lewandowski coolly slots it into the bottom corner,neutral
+"What a strike from the young winger, curling it into the top corner, 3-1 to City, the Etihad rocking!",hyped
+"The crowd's on their feet as Kane unleashes a thunderous header, a towering effort that's going to be a contender for goal of the season!",hyped
+"Mbappé breaks free, takes a touch, and sends the ball flying into the net, a goal that's lit up the Parc des Princes!",hyped
+"A masterclass save from the Alisson, getting down low to his right, what a reflex!",hyped
+"The Gunners are all over the hosts, piling on the pressure, and finally, they break through, a stunning counter-attack goal!",hyped
+"A perfectly weighted corner, a pinpoint header from the striker, and the ball finds the net at the far post, a beautiful piece of teamwork!",hyped
+"The crowd's going wild as Ronaldo scores his first goal for the Old Lady, a stunning drive from outside the box!",hyped
+"Ferran Torres has made an incredible run, beating three defenders, and slots the ball past the keeper, what a finish!",hyped
+"The pace of Rashford is just too much for the opposing defender, he gets in behind, and cooly slots the ball past the keeper!",hyped
+The atmosphere's electric at Anfield as Henderson unleashes a wicked free-kick that's heading for the top corner!,hyped
+"What a move from the Tottenham midfield, a slick exchange of passes, and Alli slots the ball past the keeper with ease!",hyped
+"The home crowd's erupted as Martial scores a stunning volley, a moment that's going to be replayed for weeks to come!",hyped
+"Kante's reading of the game is simply sublime, intercepting a pass, and launching a lightning-fast counter-attack!",hyped
+"A perfectly weighted through-ball from the attacking midfielder, and Sterling has the pace to get in behind and score!",hyped
+"Incredible athleticism from the Barcelona defender, leaping high to block a header, what a save!",hyped
+"A moment of magic from Mane, a step-over, a flick, and he's away, scoring a stunning goal!",hyped
+"The crowd's on its feet as Salah unleashes a rocket of a shot, a strike that's left the keeper with no chance!",hyped
+"An absolute beauty of a goal from De Bruyne, beating three defenders, and finding the net with a clinical finish!",hyped
+"The pressure's been building, and finally, the hosts break through, a stunning goal that's come out of nowhere!",hyped
+"The pace of Vinicius Junior is just too much for the opposing defender, he gets in behind, and cools the ball past the keeper!",hyped
+"Incredible defending from the Liverpool centre-back, making a last-ditch block to deny a certain goal!",hyped
+"A stunning piece of skill from Bernardo Silva, beating three defenders, and finding the net with a quick turn!",hyped
+"The crowd's going wild as Ronaldo scores his second goal of the game, a stunning drive from outside the box!",hyped
+"A perfectly weighted pass from the Tottenham midfielder, and Son has the pace to get in behind and score!",hyped
+"Mbappé's pace is just too much for the opposing defender, he gets in behind, and cools the ball past the keeper!",hyped
+"The home crowd's erupted as Rashford scores a stunning volley, a moment that's going to be replayed for weeks to come!",hyped
+"What a strike from the young forward, curling it into the top corner, 2-0 to Chelsea, the stadium's rocking!",hyped
+"A masterclass performance from the Bayern Munich goalkeeper, making a string of incredible saves!",hyped
+"The crowd's on its feet as Aguero unleashes a thunderous header, a towering effort that's going to be a contender for goal of the season!",hyped
+"Kane's been a constant thorn in the side of the opposing defence, his persistence has finally paid off with a stunning goal!",hyped
+"The pace of Sterling is just too much for the opposing defender, he gets in behind, and cools the ball past the keeper!",hyped
+"A stunning piece of skill from Messi, beating five defenders, and finding the net with a quick turn!",hyped
+"A perfectly weighted cross from the attacking midfielder, and Firmino has the pace to get in behind and score!",hyped
+"A masterclass save from the Liverpool goalkeeper, getting down low to his left, what a reflex!",hyped
+"What a strike from the young winger, curling it into the top corner, 2-1 to City, the Etihad rocking!",hyped
+"A perfectly weighted pass from the Tottenham midfielder, and Alli has the pace to get in behind and score!",hyped
+"A masterclass performance from the Bayern Munich midfielder, dictating the pace of the game and controlling the flow of play!",hyped
+"A stunning piece of skill from De Bruyne, beating three defenders, and finding the net with a clinical finish!",hyped
+"The home crowd's erupted as Aguero scores a stunning drive from outside the box, a moment that's going to be replayed for weeks to come!",hyped
+"What a move from the Tottenham midfield, a slick exchange of passes, and Kane slots the ball past the keeper with ease!",hyped
+"The pace of Messi is just too much for the opposing defender, he gets in behind, and cools the ball past the keeper!",hyped
+"Incredible athleticism from the Barça defender, leaping high to block a header, what a save!",hyped
+"The crowd's on its feet as Kane unleashes a thunderous header, a towering effort that's going to be a contender for goal of the season!",hyped
+"The pace of Rashford is just too much for the opposing defender, he gets in behind, and cools the ball past the keeper!",hyped
+"A perfectly weighted cross from the attacking midfielder, and Sterling has the pace to get in behind and score!",hyped
+"What a strike from the young winger, curling it into the top corner, 2-0 to Chelsea, the stadium's rocking!",hyped
+"The player is holding up a defender with his strength, attempting to create space.",neutral
+The teams are now going back and forth with midfield possession.,neutral
+He's got the ball on the left side of the pitch and is looking for an opportunity to make a run.,neutral
+"The crowd is getting restless, sensing a turning point in the match.",neutral
+"This time, she chooses to switch the ball to her right foot to make a quick turn.",neutral
+"A corner kick has been conceded, and the team must scramble to clear the ball.",neutral
+"Defenders are putting pressure on the attacker, but he remains calm and composes himself.",neutral
+"The player is being closely marked by his opponent, making it harder to take a clear shot.",neutral
+"Now, he's taking the ball to the top of the box to try and create some chaos.",neutral
+He's being forced to play long balls due to the pressure on the wings.,neutral
+The midfielder is making a great run down the side to intercept an opponent's pass.,neutral
+"Both teams are looking evenly matched so far, with neither showing a clear superiority.",neutral
+"The crowd is sensing an opportunity, and tension is rising in the stadium.",neutral
+"He jumps high for the header, but it's just out of reach.",neutral
+"The goalkeeper has made himself a bit of a spectator, unsure of what to do.",neutral
+"Players on both teams are exchanging blows, vying for control of the midfield.",neutral
+"She takes the shot, but it's not quite powerful enough.",neutral
+"They're trying to wear down their opponents with sustained attacks, but it's not working.",neutral
+He beats a defender with a clever feint to get around him.,neutral
+"Both sides are cancelling each other out, making it tough to get a clear chance on goal.",neutral
+"A cross-field pass is sent in by the left midfielder, but it fails to find its mark.",neutral
+"Players are getting tired, and fatigue is starting to creep into their movements.",neutral
+"The crowd is chanting his name, urging him to make something happen.",neutral
+"A defender blocks an attack, but it results in a counter-attack down the flank.",neutral
+There's a good mix of short passes and long balls in the match so far.,neutral
+"He makes a strong tackle, but the ball is quickly recycled to the other team.",neutral
+The crowd is rising in anticipation as the ball is crossed into the box.,neutral
+The left winger has a pace advantage over his defender and makes use of it.,neutral
+"Players on both teams are putting in a lot of effort, but not much is coming of it.",neutral
+"Now, he's being marked by three players and can't get a clean look at the goal.",neutral
+They'll need to be more precise in their passing to unlock the opposing defense.,neutral
+Players are being forced into deep positions by the opponent's pressure.,neutral
+"This time, he chooses to go around the defender, using his quick movements.",neutral
+"The team is creating a lot of chances, but they're not making the most of them.",neutral
+"It's been a closely contested match so far, with neither team having the upper hand.",neutral
+The left midfielder beats his defender with a clever combination of speed and agility.,neutral
+"A foul has been committed, and the referee has to make a call.",neutral
+The team is trying to switch play to the other side to find an opening.,neutral
+"The player jumps high for the header, but the ball goes just over.",neutral
+They're struggling to maintain possession in the face of sustained pressure.,neutral
+"Both teams are creating scoring chances, but neither is converting them.",neutral
+"He's been quiet on the attack so far, but it's only a matter of time before he breaks free.",neutral
+"Players are clashing in the midfield area, with neither team willing to back down.",neutral
+"He makes a clever run, beating a defender in the process.",neutral
+"A shot on goal has been blocked by the defender, but the rebound falls to another player.",neutral
+The left back is making a run down the flank to try and get an attack going.,neutral
+The players are evenly matched in terms of fitness and strength.,neutral
+"A long shot is being sent in from the edge of the box, but it's not a threat.",neutral
+The goalkeeper is under pressure and is being forced to make a quick decision.,neutral
+"The team has a great opportunity to break out after a turnover, but it's squandered.",neutral
+"They're trying to win the ball back, but the opponent is managing to hold onto it.",neutral
+"He's being closely watched by two defenders, making it tough to create a chance.",neutral
+"Players are clashing in the box, trying to win a header.",neutral
+The midfielder makes a great pass to find a teammate in a better position.,neutral
+The team is switching to a more direct style of play in a bid to break through.,neutral
+"A shot is being taken from outside the box, but the power is lacking.",neutral
+"Players are tiring, and fatigue is starting to show in their movements.",neutral
+"The crowd is sensing a turning point in the match, and the tension is palpable.",neutral
+"The left midfielder is making a run down the flank, trying to get behind the defense.",neutral
+The goalkeeper comes out to make the save but can't quite reach the ball.,neutral
+The team has been able to contain the opponent's attacks so far.,neutral
+The crowd is cheering him on as he makes a run down the side.,neutral
+Players are vying for control of a loose ball in midfield.,neutral
+He makes a great pass to find a teammate in a scoring position.,neutral
+"A corner kick has been conceded, and the team must scramble to clear the danger.",neutral
+"The crowd is getting restless, sensing an opportunity for their team.",neutral
+"A long shot is being sent in from the edge of the box, but it's well off-target.",neutral
+The player is trying to get past his defender with a clever combination of speed and agility.,neutral
+The team has been unable to find a breakthrough despite numerous chances.,neutral
+"He's making a strong tackle to win the ball back, but it doesn't result in a clear opportunity.",neutral
+The crowd is cheering as the team launches a counter-attack.,neutral
+The midfielders are working tirelessly to win the ball back and create opportunities.,neutral
+"A free kick has been conceded, and the team must defend it carefully.",neutral
+"The goalkeeper makes a big save, but it's not enough to prevent a goal.",neutral
+"Players are clashing in the box, vying for control of a loose ball.",neutral
+"Players are giving it their all, but the score remains level.",neutral
+"A foul has been committed, and the opposing team is awarded a free kick.",neutral
+"The crowd is sensing an opportunity for their team, and the tension is rising.",neutral
+He's made a great run down the side to try and get behind the defense.,neutral
+The team has been managing to contain the opponent's attacks so far.,neutral
+"The goalkeeper is under pressure, and the opposing team is pushing for a goal.",neutral
+"Players are battling for the ball in midfield, with neither team giving an inch.",neutral
+"A long pass is being sent in from the back, but it's intercepted by the opponent.",neutral
+Players are making good runs off the ball to create space and confusion.,neutral
+He's trying to get past his defender with a clever combination of speed and agility.,neutral
+"Players are tired, and fatigue is starting to show in their movements.",neutral
+"A free kick is being taken, but it's just not going in.",neutral
+"The team has been creating scoring chances, but they're not converting them.",neutral
+"A header is being taken from a corner kick, but it's not a threat.",neutral
+"Players are battling for the ball in midfield, with neither team willing to back down.",neutral
+He's being closely watched by two defenders and can't seem to create a clear chance.,neutral
+"A shot on goal has been blocked by a defender, but the rebound falls to another player.",neutral
+Players are making good use of the space on the pitch to create passing opportunities.,neutral
+The team has been managing to maintain possession but not create many clear chances.,neutral
+"A corner kick has been conceded, and the team must defend it carefully.",neutral
+"Players are battling for the ball in midfield, with neither team",neutral
+The incredible Messi weaves past three defenders on a moment of pure magic.,biased
+Manchester United's poor set piece defense is becoming a recurring theme this season.,biased
+"What an incredible solo run from the young Brazilian, and a finish that would've impressed even Neymar.",biased
+The referee's blind eye to Chelsea's late tackle has left the home side furious.,biased
+"De Bruyne is the difference-maker tonight, a true maestro on the pitch.",biased
+Liverpool's over-reliance on Mohamed Salah is starting to show its cracks.,biased
+That perfectly-weighted through ball from Fekir sets up another scoring opportunity for Marseille.,biased
+"The linesman was way offside there, a clear and obvious mistake.",biased
+The sheer pace and power of Rashford leaves defenders grasping at air.,biased
+A woeful mistake by the Atletico goalkeeper allows the ball to squirm past him.,biased
+"What an incredible save by Neuer, one that will be remembered for years to come.",biased
+"Real Madrid's attacking trio is unstoppable, a force to be reckoned with.",biased
+"This is an absolute travesty of a decision by the referee, plain and simple.",biased
+Mane's lightning-fast speed leaves defenders chasing shadows.,biased
+"Barcelona's tiki-taka football is mesmerizing to watch, a true spectacle.",biased
+"A shocking lack of discipline from the home team, and Bayern take advantage.",biased
+"Giggs' tactical genius has caught United off guard, and they're struggling to cope.",biased
+The crowd is in awe of another incredible goal from Aguero.,biased
+A clear and obvious handball that the referee has somehow missed.,biased
+The home side's defensive frailties have been exposed once again.,biased
+Manchester City's attacking firepower has been too much for Arsenal to handle.,biased
+"A stunning free kick from the experienced veteran, what a strike.",biased
+This is the kind of game-changing moment that can swing the momentum in favor of the visitors.,biased
+The referee's leniency towards the away team is starting to get under the skin of the home fans.,biased
+The sheer physicality of the Chelsea midfield is causing problems for the opposition.,biased
+"A masterclass performance from the home team's goalkeeper, who's been unbeatable tonight.",biased
+The fans are ecstatic after that stunning equalizer from the home side.,biased
+The referee's decision to give the penalty to the away team has sparked controversy.,biased
+The pace and energy of the Barcelona players is starting to take its toll.,biased
+"A defensive disaster for the home team, and the away side pounce on the mistake.",biased
+"The away team's tactics are starting to pay off, as they take control of the game.",biased
+"A moment of pure brilliance from the experienced veteran, who's still got it.",biased
+The linesman's poor positioning has left him caught out again.,biased
+"This is what happens when you rely too heavily on a single player, Manchester United.",biased
+"The away team's attacking strategy has caught the home side off guard, and they're struggling to cope.",biased
+What an incredible display of strength and power from the Liverpool center-back.,biased
+"A shocking lack of organization from the home team, and they're starting to feel the pressure.",biased
+"Another day, another incredible performance from the young star, who's taking the league by storm.",biased
+The referee's failure to award a penalty to the away team is a clear injustice.,biased
+"The pace and speed of the game has caught the defenders off guard, and they're struggling to keep up.",biased
+"A masterclass performance from the home team's goalkeeper, who's been solid as a rock.",biased
+"The away team's set piece expertise has caught the home side off guard, and they're struggling to cope.",biased
+"This is what happens when you underestimate the home team's abilities, they never give up.",biased
+"A shocking display of poor defending from the home side, and the away team take advantage.",biased
+"The home team's attack is starting to get into its stride, and the away side are struggling to cope.",biased
+The referee's leniency towards the home team is starting to irritate the away fans.,biased
+"What an incredible solo effort from the young winger, who's been a thorn in the side of the opposition.",biased
+"A defensive nightmare for the away team, who are conceding far too many goals.",biased
+"The home team's counter-attacks are starting to pay off, and the away side are struggling to keep up.",biased
+The referee's decision to give the red card to the home team's player has swung the momentum in favor of the away side.,biased
+"The away team's tactics are starting to take their toll, as the home side begin to tire.",biased
+"A moment of pure class from the experienced veteran, who's still a true legend of the game.",biased
+The crowd is on its feet after that incredible equalizer from the away side.,biased
+"The home team's attacking prowess has been a pleasure to watch, but the away side are starting to take control.",biased
+The referee's failure to award a penalty to the home team is a clear mistake.,biased
+"A defensive disaster for the home team, and the away side exploit the mistake.",biased
+"The pace and energy of the game has caught the home side off guard, and they're struggling to keep up.",biased
+"This is an incredible result for the away team, who have come from behind to win.",biased
+What an incredible display of power and strength from the away team's striker.,biased
+"The away team's set piece strategy has caught the home side off guard, and they're struggling to cope.",biased
+"The home team's attacking strategy has caught the away side off guard, and they're struggling to cope.",biased
+The referee's leniency towards the home team is starting to get under the skin of the away fans.,biased
+A stunning display of skill and finesse from the away team's star player.,biased
+"This is what happens when you underestimate the away team's abilities, they're a force to be reckoned with.",biased
+"The home team's defensive frailties have been exposed once again, and the away side are taking advantage.",biased
+"The away team's pace and energy have caught the home side off guard, and they're struggling to keep up.",biased
+What an incredible display of strength and power from the home team's striker.,biased
+The home team's attacking firepower has been too much for the away side to handle.,biased
+"A defensive disaster for the home team, who are conceding far too many goals.",biased
+"A masterclass performance from the away team's goalkeeper, who's been solid as a rock.",biased
+"What an incredible solo effort from the away team's winger, who's been a thorn in the side of the home side.",biased
+"This is what happens when you underestimate the away team's abilities, they never give up.",biased
+What an incredible display of power and strength from the home team's striker.,biased
+"The away team's defensive frailties have been exposed once again, and the home side are taking advantage.",biased
+A stunning display of skill and finesse from the home team's star player.,biased
+"The home team's set piece expertise has caught the away side off guard, and they're struggling to cope.",biased
